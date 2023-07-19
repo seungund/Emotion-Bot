@@ -20,10 +20,15 @@ client = discord.Client(intents=intents)
 #client = commands.Bot(command_prefix='/') #봇 명령어가 / 으로 시작함
 #///////////////////////////////////////////////////////////////////#
 
-@client.event
-async def on_ready():
+@client.event #로그인 확인
+async def on_ready(): 
     print('im online')
 
+@client.event #봇을 제외한 메시지에 반응하여 그렇군요 출력
+async def on_message(message):
+    if message.author == client.user:
+        return
+    await message.channel.send("네")
 
 #///////////////////////////////////////////////////////////////////#
 client.run(token)
