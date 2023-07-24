@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv("TOKEN") #토큰 값 가져오기
 
-intents = discord.Intents.default()  # 기본 인텐트 설정
+intents = discord.Intents.all()  # 기본 인텐트 설정
 intents.members = True  # 서버 멤버 목록을 읽을 수 있는 인텐트 설정
 
 bot = commands.Bot(command_prefix='/', intents=intents)
@@ -22,6 +22,11 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 @bot.event #로그인 확인
 async def on_ready(): 
     print('im online')
+
+@bot.event 
+async def on_message(message):
+    if message.content == "안녕":
+        await message.channel.send("안녕하쇼")
 
 #///////////////////////////////////////////////////////////////////#
 bot.run(token)
