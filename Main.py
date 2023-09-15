@@ -18,6 +18,11 @@ intents.members = True  # 서버 멤버 목록을 읽을 수 있는 인텐트 �
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 #///////////////////////////////////////////////////////////////////#
+# 외부 함수
+
+
+#///////////////////////////////////////////////////////////////////#
+# 내부 함수
 
 @bot.event #로그인 확인
 async def on_ready(): 
@@ -25,8 +30,10 @@ async def on_ready():
 
 @bot.event 
 async def on_message(message):
+    if message.author == bot.user:
+            return
     if message.content == "안녕":
-        await message.channel.send("안녕하쇼")
+        await message.channel.send("안녕하세요")
     await bot.process_commands(message)
         
 @bot.command() # !hello 입력 시 hello 출력
@@ -39,7 +46,11 @@ async def image(ctx):
     await ctx.send("확인")
     return(ctx.message.attachments[0].url)
 
-
+@bot.command() # !repeat + string 입력 시 string 반환하여 채널에 전송
+async def repeat(ctx):
+    variable = ctx.message.content
+    variable = variable.replace("!repeat", "")
+    await ctx.send(variable)
 
 #///////////////////////////////////////////////////////////////////#
 bot.run(token)
