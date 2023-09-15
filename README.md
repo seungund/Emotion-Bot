@@ -13,5 +13,5 @@
 Google Teachable Machine을 사용하여 학습
 
 
-### 기간
+## 기간
 ~2023/12/22
