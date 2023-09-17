@@ -6,6 +6,11 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+from keras.models import load_model
+import numpy as np
+import matplotlib.pyplot as plt
+from keras.preprocessing import image
+
 
 # 봇 기본 설정
 
@@ -18,8 +23,18 @@ intents.members = True  # 서버 멤버 목록을 읽을 수 있는 인텐트 �
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 #///////////////////////////////////////////////////////////////////#
+# 고정 변수
+
+model_1 = ''
+model_2 = 'model/keras_model_1.h5'
+
+#///////////////////////////////////////////////////////////////////#
 # 외부 함수
 
+def face_classification() :
+    model = load_model(model_2)
+    
+     
 
 #///////////////////////////////////////////////////////////////////#
 # 내부 함수
