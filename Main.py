@@ -28,7 +28,6 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 model_1 = 'models/emotion_detection_model_15epochs.h5'
 
 #///////////////////////////////////////////////////////////////////#
-# 외부 함수
 
     #사진 전처리
     #감정 분석
