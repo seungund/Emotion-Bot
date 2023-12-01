@@ -9,22 +9,24 @@
 **모델 유형:** Sequential
 
 **모델 구조:**
-- Conv2D Layer (32 필터)
-- Conv2D Layer (64 필터)
+- Conv2D Layer (32 필터) - relu
+- Conv2D Layer (64 필터) - relu
 - MaxPooling2D Layer
 - Dropout Layer
-- Conv2D Layer (128 필터)
+- Conv2D Layer (128 필터) - relu
 - MaxPooling2D Layer
 - Dropout Layer
-- Conv2D Layer (256 필터)
+- Conv2D Layer (256 필터) - relu
 - MaxPooling2D Layer
 - Dropout Layer
 - Flatten Layer
-- Dense Layer (512 뉴런)
+- Dense Layer (512 뉴런) - relu
 - Dropout Layer
-- Dense Layer (6 뉴런)
+- Dense Layer (6 뉴런) - softmax
 
-**학습 데이터:** [Kaggle Emotion Detection Dataset](https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer)
+- optimizer - adam, loss_f - categorical_crossentropy
+
+**학습 데이터:** [Kaggle Emotion Detection Dataset](https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer)  48*48
 
 **하이퍼파라미터:**
 - Epoch: 15
@@ -32,11 +34,7 @@
 
 **성능:**
 - 정확도 (Accuracy): 0.80
-- 검증 정확도 (Validation Accuracy): 0.65
-
-### 모델 2
-
-**학습 데이터:** [Kaggle Emotion Detection Dataset](https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer) (Google Teachable Machine을 사용하여 학습)
+- 검증 정확도 (Validation Accuracy): 0.70
 
 ## 기간
 

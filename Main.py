@@ -25,16 +25,13 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 #///////////////////////////////////////////////////////////////////#
 # 고정 변수
 
-model_1 = ''
-model_2 = 'model/keras_model_1.h5'
+model_1 = 'models/emotion_detection_model_15epochs.h5'
 
 #///////////////////////////////////////////////////////////////////#
 # 외부 함수
 
-def face_classification() :
-    model = load_model(model_2)
-    
-     
+    #사진 전처리
+    #감정 분석
 
 #///////////////////////////////////////////////////////////////////#
 # 내부 함수
