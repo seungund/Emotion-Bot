@@ -34,7 +34,7 @@
 
 **성능:**
 - 정확도 (Accuracy): 0.80
-- 검증 정확도 (Validation Accuracy): 0.70
+- 검증 정확도 (Validation Accuracy): 0.65
 
 ## 기간
 
