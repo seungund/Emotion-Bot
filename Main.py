@@ -14,7 +14,15 @@ from PIL import Image
 import requests
 import re
 
-# 봇 기본 설정
+#///////////////////////////////////////////////////////////////////#
+
+
+#실행시 정사각형 이미지로 하세요!!!!!!!
+
+
+#///////////////////////////////////////////////////////////////////#
+
+# 봇 기본 설정(디스코드 챗봇)
 
 load_dotenv()
 token = os.getenv("TOKEN") # .env 파일에서 토큰 값 가져오기
@@ -121,23 +129,6 @@ async def on_message(message):
 
         imgdel() #이미지 죽임
         
-
-# @bot.command() # !hello 입력 시 hello 출력
-# async def hello(ctx):
-#     await ctx.send("Hello")
-
-# @bot.event # !image + 사진파일 입력 시 이미지 링크 반환
-# async def image(ctx):
-#     print(ctx.message.attachments[0].url)  # 이미지의 링크를 콘솔에 출력
-#     await ctx.send("확인")  # "확인" 메시지를 Discord 채널에 전송
-#     return ctx.message.attachments[0].url  # 이미지의 링크를 반환
-
-
-# @bot.command() # !repeat + string 입력 시 string 반환하여 채널에 전송
-# async def repeat(ctx):
-#     variable = ctx.message.content
-#     variable = variable.replace("!repeat", "")
-#     await ctx.send(variable)
 
 #///////////////////////////////////////////////////////////////////#
 bot.run(token)
